@@ -6,18 +6,18 @@ exports.largestPrimeFactor = function(n){
   // do your work here
 
   while(notFound) {
-    notDivided = true;
+    notDivided = true; // reset notDivided so it starts dividing in next loop
     while(notDivided) { // divide by current prime number
-      if(newOperand%primeNumber === 0) {
-        newOperand = newOperand / primeNumber;
-      }else{
-        notDivided = false;
+      if(newOperand%primeNumber === 0) { // if current prime is a factor of the current operand
+        newOperand = newOperand / primeNumber; // make quotient the new operand
+      }else{ // if current number is not a factor of current operand
+        notDivided = false; // stop dividing!
       }
     }
-    findNewPrime(n);
-    if(primeNumber >= newOperand) {
-      notFound = false;
-      primeNumber = newOperand;
+    findNewPrime(n); // find new prime
+    if(primeNumber >= newOperand) { // if prime number becomes bigger than operand
+      notFound = false; // break out of loop
+      primeNumber = newOperand; // the final prime number is the remainder
     }
   }
 
@@ -31,11 +31,11 @@ exports.largestPrimeFactor = function(n){
           i = 2; // restart checking number
         }
         if(i === (primeNumber - 1)) { // if is prime
-          notFound = false;
+          notFound = false; // break out of loop and end function
         }
       }
     }
   }
 
-  return primeNumber;
+  return primeNumber; // return answer
 };
