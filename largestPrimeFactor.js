@@ -6,6 +6,7 @@ exports.largestPrimeFactor = function(n){
   // do your work here
 
   while(notFound) {
+    notDivided = true;
     while(notDivided) { // divide by current prime number
       if(newOperand%primeNumber === 0) {
         newOperand = newOperand / primeNumber;
@@ -14,7 +15,7 @@ exports.largestPrimeFactor = function(n){
       }
     }
     findNewPrime(n);
-    if(primeNumber === newOperand) {
+    if(primeNumber >= newOperand) {
       notFound = false;
       primeNumber = newOperand;
     }
