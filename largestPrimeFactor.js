@@ -23,16 +23,18 @@ exports.largestPrimeFactor = function(n){
 
   function findNewPrime() {
     var notFound = true;
+    var i = 2;
     primeNumber++; // add 1 first
     while(notFound) {
-      for(var i = 2; i < primeNumber; i++) { // check if not prime
+      while(i < primeNumber) { // check if not prime
         if((primeNumber % i) === 0) { // if not prime
           primeNumber++; // find new prime number
           i = 2; // restart checking number
         }
-        if(i === (primeNumber - 1)) { // if is prime
+        if(i >= (primeNumber / 2)) { // if is prime
           notFound = false; // break out of loop and end function
         }
+        i++;
       }
     }
   }
