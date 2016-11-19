@@ -8,14 +8,14 @@ exports.largestPrimeFactor = function(n){
   while(notFound) {
     notDivided = true; // reset notDivided so it starts dividing in next loop
     while(notDivided) { // divide by current prime number
-      if(newOperand%primeNumber === 0) { // if current prime is a factor of the current operand
+      if(newOperand % primeNumber === 0) { // if current prime is a factor of the current operand
         newOperand = newOperand / primeNumber; // make quotient the new operand
       }else{ // if current number is not a factor of current operand
         notDivided = false; // stop dividing!
       }
     }
-    findNewPrime(n); // find new prime
-    if(primeNumber >= newOperand) { // if prime number becomes bigger than operand
+    findNewPrime(); // find new prime
+    if(primeNumber >= (newOperand/2)) { // if prime number becomes bigger than operand
       notFound = false; // break out of loop
       primeNumber = newOperand; // the final prime number is the remainder
     }
