@@ -15,7 +15,7 @@ exports.largestPrimeFactor = function(n){
       }
     }
     findNewPrime(); // find new prime
-    if(primeNumber >= (newOperand/2)) { // if prime number becomes bigger than operand
+    if(primeNumber >= (newOperand / 2)) { // if prime number becomes bigger than half of operand
       notFound = false; // break out of loop
       primeNumber = newOperand; // the final prime number is the remainder
     }
