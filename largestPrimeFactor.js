@@ -14,6 +14,9 @@ exports.largestPrimeFactor = function(n){
         notDivided = false; // stop dividing!
       }
     }
+    if(newOperand === 1) { // fix bug where primeNumber % newOperand === 0
+      break;
+    }
     findNewPrime(); // find new prime
     if(primeNumber >= (newOperand / 2)) { // if prime number becomes bigger than half of operand
       notFound = false; // break out of loop
